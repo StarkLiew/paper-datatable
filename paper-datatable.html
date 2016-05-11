@@ -511,7 +511,7 @@ A [material design implementation of a data table](https://www.google.com/design
 				_queryAndSetColumns: function(){
 					var columns = this.queryAllEffectiveChildren('paper-datatable-column');
 					columns.forEach((column) => {
-						if(!column.beenAttached.state.ready){
+						if(!column.beenAttached){ // StarkLiew: column.beenAttached.state.ready deprecated
 							column.parentNodeRef = this;
 							this.async(function(){
 								column._registerEvilFunctions();
